@@ -5,11 +5,11 @@
         "port": 51826,
         "pin": "031-45-154"
     },
-    "description": "This is a sample configuration file showing the capabilities of Http-SecuritySystem",
+    "description": "This is a sample configuration file showing the capabilities of Http-Garagedoor",
     "accessories": [
         {
-            "accessory": "Http-SecuritySystem",
-            "name": "Home security",
+            "accessory": "Http-GarageDoor",
+            "name": "Garage Door",
             "username": "",
             "password": "",
             "immediately": false,
@@ -17,24 +17,22 @@
             "pollInterval": 30000,
             "http_method": "POST",
             "urls": {
-                "stay": { "url": "http://localhost:1880/alarm/arm", "body": "stay" },
-                "away": { "url": "http://localhost:1880/alarm/arm", "body": "away" },
-                "night": { "url": "http://localhost:1880/alarm/arm", "body": "night" },
-                "disarm": { "url": "http://localhost:1880/alarm/disarm", "body": "" },
-                "readCurrentState": { "url": "http://localhost:1880/alarm/check", "body": "" },
-                "readTargetState": { "url": "http://localhost:1880/alarm/check", "body": "" }
+                "readCurrentState": { "url": "http://localhost:1880/garage/check", "body": "" },
+                "readTargetState": { "url": "http://localhost:1880/garage/check", "body": "" },
+                "setTargetStateOpen": { "url": "http://localhost:1880/garage/setstate", "body": "OPEN" },
+                "setTargetStateClosed": { "url": "http://localhost:1880/garage/setstate", "body": "CLOSED" },
             },
             "mappers": [
                 {
                     "type": "xpath",
                     "parameters": {
-                        "xpath": "//partition[3]/text()"
+                        "xpath": "string(/state/datapoint/@value)"
                     }
                 },
                 {
                     "type": "regex",
                     "parameters": {
-                        "regexp": "^The system is currently (ARMED|DISARMED), yo!$",
+                        "regexp": "^The door is currently (OPEN|CLOSED), yo!$",
                         "capture": "1"
                     }
                 },
@@ -42,8 +40,8 @@
                     "type": "static",
                     "parameters": {
                         "mapping": {
-                            "ARMED": "0",
-                            "DISARMED": "3"
+                            "OPENING": "2",
+                            "CLOSING": "3"
                         }
                     }
                 }
