@@ -1,25 +1,25 @@
 {
-  "name": "homebridge-http-securitysystem",
-  "version": "1.0.3",
-  "description": "HTTP based SecuritySystem plugin for homebridge: https://github.com/nfarina/homebridge, with readable state",
+  "name": "homebridge-http-garagedoor",
+  "version": "1.0.0",
+  "description": "HTTP based GarageDoorOpener plugin for homebridge: https://github.com/nfarina/homebridge, with readable state",
   "license": "BSD-2-Clause",
   "keywords": [
     "homebridge-plugin",
     "homebridge",
     "homekit",
-    "security-system"
+    "garagedoor"
   ],
   "engines": {
     "node": ">=0.12.0",
     "homebridge": ">=0.2.0"
   },
-  "author": "Marcell Toth",
+  "author": "Matthias Guse",
   "contributors": [
-    ""
+    "Marcell Toth"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/codetwice/homebridge-http-securitysystem.git"
+    "url": "git://github.com/mach1009/homebridge-http-garagedoor.git"
   },
   "dependencies": {
     "polling-to-event": "^2.0.2",
@@ -29,7 +29,7 @@
   },
   "readmeFilename": "README.md",
   "bugs": {
-    "url": "https://github.com/codetwice/homebridge-http-securitysystem/issues"
+    "url": "https://github.com/mach1009/homebridge-http-garagedoor/issues"
   },
   "main": "index.js",
   "scripts": {
