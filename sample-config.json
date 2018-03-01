@@ -10,6 +10,7 @@
         {
             "accessory": "Http-GarageDoor",
             "name": "Garage Door",
+            "debug": false,
             "username": "",
             "password": "",
             "immediately": false,
@@ -26,7 +27,8 @@
                 {
                     "type": "xpath",
                     "parameters": {
-                        "xpath": "string(/state/datapoint/@value)"
+                        "xpath": "//partition[3]/text()",
+                        "index": 0
                     }
                 },
                 {

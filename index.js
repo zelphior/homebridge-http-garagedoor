@@ -126,13 +126,13 @@ function HttpGarageDoorAccessory(log, config) {
 			url: config.urls.readTargetState.url,
 			body: config.urls.readTargetState.body || ""
 		},
-		setTargetStateOpen: {
-			url: config.urls.setTargetStateOpen.url,
-			body: config.urls.setTargetStateOpen.body || ""
+		open: {
+			url: config.urls.open.url,
+			body: config.urls.open.body || ""
 		},
-		setTargetStateClosed: {
-			url: config.urls.setTargetStateClosed.url,
-			body: config.urls.setTargetStateClosed.body || ""
+		close: {
+			url: config.urls.close.url,
+			body: config.urls.close.body || ""
 		}
 		//,
 		//readObstructionState: {
@@ -241,10 +241,10 @@ HttpGarageDoorAccessory.prototype.setTargetState = function(state, callback) {
 	var cfg = null;
 	switch (state) {
 		case Characteristic.TargetDoorState.OPEN:
-			cfg = this.urls.setTargetStateClosed;
+			cfg = this.urls.close;
 			break;
 		case Characteristic.TargetDoorState.CLOSED:
-			cfg = this.urls.setTargetStateOpen;
+			cfg = this.urls.open;
 			break;
 	}
 
