@@ -7,7 +7,7 @@ and provides the Service.GarageDoorOpener service to HomeKit.
 ## Installation
 
 1. Install homebridge using: npm install -g homebridge
-2. Install homebridge-http-garagedoor using: 
+2. Install homebridge-http-garagedoor using: npm install -g homebridge-http-garagedoor
 3. Update your configuration file. See sample-config.json in this repository for a sample. 
 
 ## Features
