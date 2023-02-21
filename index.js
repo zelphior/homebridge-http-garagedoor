@@ -241,10 +241,10 @@ HttpGarageDoorAccessory.prototype.setTargetState = function(state, callback) {
 	var cfg = null;
 	switch (state) {
 		case Characteristic.TargetDoorState.OPEN:
-			cfg = this.urls.close;
+			cfg = this.urls.open;
 			break;
 		case Characteristic.TargetDoorState.CLOSED:
-			cfg = this.urls.open;
+			cfg = this.urls.close;
 			break;
 	}
 
